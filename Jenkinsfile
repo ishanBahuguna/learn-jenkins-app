@@ -24,7 +24,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Test stage'
+                /* test -f build/index.html checks if the file build/index.html exists.
+                -f means "check if it's a regular file".
+                If the file exists, the command succeeds (exit code 0), and the pipeline continues.
+                If the file does not exist, it fails (non-zero exit code), and the pipeline stops or marks this stage as failed.*/
+                sh 'test -f build/index.html'
             }
         }
     }
