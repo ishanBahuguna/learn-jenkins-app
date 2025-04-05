@@ -36,6 +36,7 @@ pipeline {
                 If the file does not exist, it fails (non-zero exit code), and the pipeline stops or marks this stage as failed.*/
                 sh '''
                     test -f build/index.html
+                    npm test
                 '''
             }
         }
