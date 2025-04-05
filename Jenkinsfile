@@ -41,4 +41,11 @@ pipeline {
             }
         }
     }
+
+    post {
+        // run this irrespection of build failed or succeded
+        always {
+            junit 'test-results/junit.xml'
+        }
+    }
 }
